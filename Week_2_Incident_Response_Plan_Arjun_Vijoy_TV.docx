@@ -1,1 +1,768 @@
+WEEK 2 INTERNSHIP REPORT
 
+INCIDENT RESPONSE PLAN
+
+A Practical Plan for Preparing, Detecting, Responding to and Recovering from Cyber Incidents
+
+
+
+Prepared by
+
+Arjun Vijoy T.V.
+
+Task
+
+Week 2 – Incident Response Plan Creation
+
+Domain
+
+Cybersecurity
+
+Framework basis
+
+NIST SP 800-61 Rev. 3 / NIST CSF 2.0
+
+Report date
+
+2 October 2026
+
+
+
+Internship submission
+
+
+Page 
+
+1. Executive Summary
+
+An Incident Response Plan (IRP) provides an organization with a structured approach for handling suspected and confirmed cybersecurity incidents. The purpose of this plan is to reduce confusion during a security event, define responsibilities, support rapid containment, preserve evidence, restore affected services and ensure that lessons learned improve future security.
+
+This plan is aligned with NIST Special Publication 800-61 Revision 3, finalized in April 2025. NIST's current guidance integrates incident response with the Cybersecurity Framework 2.0 and emphasizes the Detect, Respond and Recover functions, supported by broader Govern, Identify and Protect activities and continuous improvement. NIST SP 800-61 Rev. 3 supersedes Revision 2. [1][2]
+
+The plan covers preparation, incident reporting, triage, classification, analysis, containment, eradication, recovery, communication, evidence handling and post-incident improvement. It is designed to be adaptable to common scenarios such as ransomware, phishing, account compromise, malware infection, data breach, DDoS and exploitation of vulnerable systems.
+
+2. Purpose and Objectives
+
+Provide a clear and repeatable process for responding to cybersecurity incidents.
+
+Define roles, responsibilities and escalation paths before an incident occurs.
+
+Ensure incidents are detected, assessed and prioritized consistently.
+
+Limit damage by containing affected systems and accounts quickly.
+
+Preserve relevant evidence for investigation and legal or regulatory needs.
+
+Restore normal business operations in a controlled manner.
+
+Communicate accurate information to appropriate internal and external stakeholders.
+
+Capture lessons learned and continuously improve security controls.
+
+3. Scope
+
+This plan applies to employees, contractors, information systems, endpoints, servers, cloud services, networks, applications, databases and third-party services that support the organization. It covers suspected and confirmed events that may affect confidentiality, integrity or availability.
+
+Incident type
+
+Examples
+
+Initial priority
+
+Malware
+
+Trojan, infostealer, malicious script
+
+High
+
+Ransomware
+
+Encryption, data theft, extortion
+
+Critical
+
+Phishing
+
+Credential theft, malicious attachment
+
+Medium–High
+
+Account compromise
+
+Stolen password, session/token abuse
+
+High
+
+Data breach
+
+Unauthorized access or disclosure
+
+Critical
+
+Vulnerability exploitation
+
+Compromised internet-facing system
+
+Critical
+
+DDoS
+
+Service availability disruption
+
+High
+
+Insider incident
+
+Unauthorized or accidental data activity
+
+High
+
+4. Incident Response Principles
+
+Act quickly, but avoid destroying evidence or making uncontrolled changes.
+
+Use verified information and clearly distinguish facts, assumptions and hypotheses.
+
+Protect people and critical business operations while containing the incident.
+
+Apply least privilege and limit access to incident information.
+
+Maintain a reliable timeline of important actions and decisions.
+
+Use approved communication channels and a single incident owner.
+
+Coordinate with legal, management, vendors, law enforcement and regulators when appropriate.
+
+Restore systems only after reasonable assurance that the threat has been removed or contained.
+
+Treat every incident as an opportunity to improve the organization's security posture.
+
+5. Incident Response Team and Responsibilities
+
+Role
+
+Main responsibilities
+
+Incident Response Lead
+
+Declares/escalates incidents, coordinates the response, assigns tasks and maintains overall status.
+
+SOC / Security Analyst
+
+Monitors alerts, validates events, investigates indicators and maintains technical evidence.
+
+IT / Infrastructure
+
+Isolates systems, disables accounts, applies patches, restores infrastructure and supports recovery.
+
+Network / Cloud Team
+
+Blocks malicious traffic, reviews network/cloud activity and implements containment controls.
+
+Digital Forensics
+
+Collects and analyzes forensic evidence and supports root-cause investigation.
+
+Legal / Compliance
+
+Advises on evidence, contractual obligations, privacy and regulatory notification.
+
+Management
+
+Makes business-impact decisions, approves major actions and coordinates executive communication.
+
+HR
+
+Supports incidents involving employees or insider activity according to organizational policy.
+
+Communications / PR
+
+Coordinates approved external messaging and protects consistency of public statements.
+
+Third-Party / Vendor Manager
+
+Coordinates affected vendors, cloud providers and external incident-response support.
+
+6. Preparation
+
+Preparation is performed before an incident occurs. CISA describes an incident response plan as a formally approved document that helps an organization before, during and after a confirmed or suspected security incident, including clear roles and key contacts. [3]
+
+Maintain an updated incident response plan and emergency contact list.
+
+Maintain an inventory of critical systems, data, applications and dependencies.
+
+Define incident severity levels and escalation thresholds.
+
+Ensure security logs are enabled and retained according to organizational requirements.
+
+Maintain secure and tested backups for critical data and systems.
+
+Deploy appropriate endpoint, network, identity and cloud monitoring.
+
+Prepare isolation, account-disablement and network-blocking procedures.
+
+Maintain relationships with legal counsel, incident-response providers, cloud vendors and relevant authorities.
+
+Conduct tabletop exercises and technical simulations periodically.
+
+Train employees on how and where to report suspicious activity.
+
+7. Incident Reporting and Initial Detection
+
+An incident can be identified through a security alert, employee report, customer complaint, threat intelligence, vendor notification, abnormal system behavior or a suspected policy violation.
+
+Record the date and time of the initial alert or report.
+
+Record who reported the event and how it was detected.
+
+Capture the affected user, device, application, account, IP address or service where known.
+
+Create an incident record/ticket and assign an incident ID.
+
+Avoid deleting files, logs or suspicious messages unless necessary to prevent immediate harm.
+
+Notify the designated incident response lead.
+
+Perform an initial triage to determine whether the event is a false positive, security event or security incident.
+
+8. Incident Classification and Severity
+
+Severity
+
+Definition
+
+Example
+
+Target response
+
+P1 – Critical
+
+Major threat to critical operations, sensitive data or widespread systems.
+
+Ransomware affecting production; major data breach
+
+Immediate; activate full response team
+
+P2 – High
+
+Significant compromise or high likelihood of escalation.
+
+Admin account compromise; exploited internet-facing server
+
+Rapid response and escalation
+
+P3 – Medium
+
+Limited impact with contained scope.
+
+Single endpoint malware infection
+
+Security team investigates and contains
+
+P4 – Low
+
+Minor or suspicious event with limited risk.
+
+Blocked phishing attempt
+
+Document, monitor and close if appropriate
+
+Severity should be reassessed as new evidence becomes available. A low-severity event can be escalated when additional affected systems, sensitive information or attacker activity is discovered.
+
+9. Detection and Analysis
+
+The analysis stage determines what happened, what is affected, how the attacker entered, whether the attacker still has access and what the likely business impact is.
+
+Review SIEM, EDR, firewall, identity, email, DNS, cloud and application logs as relevant.
+
+Identify indicators of compromise such as malicious domains, hashes, IP addresses, processes, accounts and unusual authentication.
+
+Determine affected hosts, users, applications and data.
+
+Establish a timeline of attacker and defender activity.
+
+Identify the likely initial access vector.
+
+Check for persistence, privilege escalation and lateral movement.
+
+Determine whether data was accessed, modified or exfiltrated.
+
+Record confidence levels for major findings.
+
+Update the incident severity when evidence changes the risk assessment.
+
+10. Containment
+
+Containment limits the spread and reduces the attacker's ability to continue operating. Actions should be proportionate to the incident and should consider business continuity.
+
+10.1 Short-Term Containment
+
+Isolate compromised endpoints from the network.
+
+Disable or lock compromised accounts and revoke active sessions/tokens where appropriate.
+
+Block confirmed malicious IP addresses, domains, URLs or hashes using approved controls.
+
+Restrict compromised services or exposed ports.
+
+Separate affected network segments when lateral movement is suspected.
+
+Preserve critical logs and volatile evidence where feasible.
+
+10.2 Long-Term Containment
+
+Apply temporary segmentation or access restrictions.
+
+Move critical workloads to clean infrastructure when required.
+
+Apply emergency patches or configuration changes.
+
+Increase monitoring on affected assets and related systems.
+
+Maintain business operations through approved continuity procedures.
+
+11. Evidence Preservation and Forensics
+
+Evidence should be handled carefully so that investigation findings remain reliable. The exact process should follow organizational policy and applicable legal requirements.
+
+Record who collected each item, when it was collected and from which system.
+
+Preserve relevant logs, alerts, email messages, files, endpoint data and authentication records.
+
+Use trusted forensic collection procedures where required.
+
+Calculate hashes for collected files or forensic images when appropriate.
+
+Maintain a chain-of-custody record for evidence that may be used in legal or disciplinary proceedings.
+
+Avoid modifying original evidence unnecessarily.
+
+Store evidence securely with restricted access.
+
+12. Eradication
+
+After containment, the organization removes the cause of the compromise and closes known attack paths.
+
+Remove malware, persistence mechanisms and unauthorized accounts or tools.
+
+Reset compromised passwords and revoke exposed tokens, keys and sessions.
+
+Patch exploited vulnerabilities and correct insecure configurations.
+
+Remove unauthorized remote-access methods.
+
+Review connected systems for related compromise.
+
+Confirm that security controls are functioning before reconnecting systems.
+
+Document the root cause and contributing weaknesses.
+
+13. Recovery
+
+Recovery returns systems to trusted operation. NIST CSF 2.0 describes recovery as restoring affected assets and operations while coordinating responsibilities, executing recovery plans and communicating with stakeholders. [4]
+
+Confirm containment and eradication before restoration.
+
+Validate the integrity and cleanliness of backups or recovery images.
+
+Restore critical systems according to business priority.
+
+Apply security patches and hardened configurations before reconnecting systems.
+
+Monitor restored systems closely for signs of reinfection or attacker persistence.
+
+Validate application, data and security functionality with system owners.
+
+Return systems to normal operation gradually.
+
+Continue heightened monitoring for an appropriate period.
+
+Document recovery completion and remaining risks.
+
+14. Communication Plan
+
+Stakeholder
+
+Information needed
+
+Communication owner
+
+Employees
+
+What happened, what they should do, reporting instructions
+
+Incident Lead / HR
+
+IT/Security
+
+Technical findings, affected assets, required actions
+
+Incident Response Lead
+
+Management
+
+Business impact, severity, decisions required, status
+
+Incident Response Lead
+
+Customers/Partners
+
+Verified impact and approved instructions when relevant
+
+Communications / Management
+
+Legal/Compliance
+
+Facts, evidence, affected data and notification considerations
+
+Legal / Compliance
+
+Regulators/Law Enforcement
+
+Required information under applicable rules
+
+Legal / Authorized Management
+
+Vendors
+
+Technical coordination and containment requirements
+
+Vendor Manager / IT
+
+Only authorized personnel should make external statements. Communication should be timely, factual and consistent, while avoiding disclosure of sensitive investigation details.
+
+15. Scenario-Specific Response Procedures
+
+15.1 Ransomware
+
+Declare and classify the incident based on affected systems and business impact.
+
+Isolate infected systems and restrict suspected lateral movement.
+
+Protect backup infrastructure from further compromise.
+
+Identify the initial access vector and attacker activity.
+
+Preserve evidence and relevant logs.
+
+Reset compromised credentials and remove persistence.
+
+Validate clean backups before restoration.
+
+Restore critical services in priority order and monitor closely.
+
+15.2 Phishing / Credential Compromise
+
+Collect the suspicious message, URL and affected account information.
+
+Disable or secure the compromised account and revoke active sessions.
+
+Reset credentials and enforce appropriate MFA.
+
+Search for additional affected users and related messages.
+
+Check mailbox rules, authentication logs and suspicious forwarding activity.
+
+Block malicious domains or URLs where appropriate.
+
+Determine whether sensitive data was accessed.
+
+15.3 Malware on Endpoint
+
+Isolate the endpoint while preserving evidence.
+
+Identify the malware and affected files/processes.
+
+Review execution, persistence and network connections.
+
+Check whether credentials or sensitive data may have been exposed.
+
+Remove malware or rebuild the endpoint where required.
+
+Reset exposed credentials and validate security controls.
+
+Monitor the user and related systems for additional activity.
+
+15.4 Data Breach
+
+Identify what data was accessed, changed or exfiltrated.
+
+Determine the affected systems, users and time period.
+
+Contain ongoing unauthorized access.
+
+Preserve evidence and maintain an investigation timeline.
+
+Engage legal/privacy teams to assess notification requirements.
+
+Coordinate approved communications with affected parties.
+
+Implement corrective controls and monitor for follow-on abuse.
+
+15.5 DDoS
+
+Confirm the service disruption and identify the affected service.
+
+Activate DDoS protection, CDN/WAF or upstream mitigation as appropriate.
+
+Apply rate limiting and filtering based on verified traffic patterns.
+
+Monitor availability and service performance.
+
+Coordinate with the ISP, cloud provider or DDoS mitigation provider.
+
+Preserve relevant network evidence.
+
+Review resilience and capacity after service restoration.
+
+16. Incident Response Workflow
+
+The following simplified workflow can be used as the operational sequence:
+
+Stage
+
+Primary question
+
+Main output
+
+1. Prepare
+
+Are people, tools and procedures ready?
+
+Contacts, playbooks, backups, monitoring
+
+2. Detect
+
+What security event has occurred?
+
+Alert / incident record
+
+3. Triage
+
+How serious is it?
+
+Severity and scope
+
+4. Analyze
+
+What happened and how?
+
+Timeline, IOCs, root-cause hypothesis
+
+5. Contain
+
+How do we stop further damage?
+
+Isolated systems/accounts
+
+6. Eradicate
+
+How do we remove the cause?
+
+Clean systems, patched weaknesses
+
+7. Recover
+
+How do we safely restore operations?
+
+Validated services
+
+8. Improve
+
+What must change?
+
+Lessons learned and action plan
+
+17. Decision-Making and Escalation Matrix
+
+Condition
+
+Action
+
+Escalate to
+
+Single low-impact endpoint
+
+Contain and investigate
+
+Security lead
+
+Multiple endpoints affected
+
+Activate coordinated response
+
+Incident Response Lead + IT
+
+Privileged account compromised
+
+Immediately secure account and review access
+
+Incident Response Lead + Management
+
+Critical server compromised
+
+Isolate, preserve evidence and assess business impact
+
+Incident Response Lead + Management
+
+Sensitive data potentially exposed
+
+Contain and start breach assessment
+
+Legal/Compliance + Management
+
+Ransomware affecting critical services
+
+Activate major incident response and recovery
+
+Executive Management + full response team
+
+Third-party compromise
+
+Coordinate containment with vendor
+
+Vendor Manager + Legal + Security
+
+18. Post-Incident Activities and Lessons Learned
+
+NIST emphasizes continuous improvement as part of the current incident response model. Lessons from incidents should be analyzed, prioritized and used to improve cybersecurity risk management. [2]
+
+Conduct a post-incident review after stabilization.
+
+Document the root cause and attack path.
+
+Identify which controls worked and which failed or were missing.
+
+Review response timelines and communication effectiveness.
+
+Update detection rules, playbooks and security configurations.
+
+Patch or redesign affected systems.
+
+Provide additional training where human factors contributed.
+
+Track corrective actions to completion.
+
+Share appropriate threat intelligence with relevant parties.
+
+Update the incident response plan based on lessons learned.
+
+19. Incident Response Metrics
+
+Metric
+
+Purpose
+
+Mean Time to Detect (MTTD)
+
+Measures how quickly suspicious activity is detected.
+
+Mean Time to Respond (MTTR)
+
+Measures how quickly the response begins and progresses.
+
+Time to Containment
+
+Measures how quickly attacker activity is limited.
+
+Time to Recovery
+
+Measures how quickly affected services return to trusted operation.
+
+Number of incidents by severity
+
+Shows incident trends and workload.
+
+Repeat incidents
+
+Identifies unresolved root causes.
+
+Playbook exercise completion
+
+Measures readiness.
+
+Backup restoration success
+
+Measures recovery capability.
+
+20. Testing and Maintenance
+
+Review the plan at least annually and after significant incidents or major technology changes.
+
+Conduct tabletop exercises for ransomware, data breach and account compromise scenarios.
+
+Test technical recovery and backup restoration.
+
+Verify emergency contact information.
+
+Check that incident response tools and logging systems are available.
+
+Update severity definitions and escalation thresholds when business requirements change.
+
+Document exercise findings and track improvements.
+
+21. Practical Incident Response Checklist
+
+☐ Incident reported and incident ID created
+
+☐ Incident response lead notified
+
+☐ Severity and scope assessed
+
+☐ Affected accounts/systems identified
+
+☐ Evidence and logs preserved
+
+☐ Immediate containment completed
+
+☐ Initial access vector investigated
+
+☐ Credentials/tokens secured
+
+☐ Vulnerability or root cause addressed
+
+☐ Malware/persistence removed
+
+☐ Legal/compliance assessment completed when required
+
+☐ Backups validated
+
+☐ Critical services restored
+
+☐ Post-recovery monitoring completed
+
+☐ Lessons learned documented
+
+☐ Corrective actions assigned and tracked
+
+22. Conclusion
+
+A well-defined Incident Response Plan enables an organization to respond to cybersecurity incidents in a structured and controlled manner. The plan should not be treated as a document that is used only after an attack. Preparation, monitoring, training, testing, communication and continuous improvement are essential parts of incident response capability.
+
+The proposed plan provides a practical sequence from preparation and detection through analysis, containment, eradication, recovery and lessons learned. It also defines responsibilities, escalation criteria, communication requirements, evidence handling and scenario-specific procedures. By exercising the plan regularly and updating it when technology, threats or business requirements change, an organization can improve its ability to limit damage, restore services and learn from cybersecurity incidents.
+
+23. References
+
+[1] NIST, SP 800-61 Rev. 3, Incident Response Recommendations and Considerations for Cybersecurity Risk Management: A CSF 2.0 Community Profile, April 2025. https://csrc.nist.gov/pubs/sp/800/61/r3/final
+
+[2] NIST, Incident Response Project, including the current incident response lifecycle and CSF 2.0 integration. https://csrc.nist.gov/Projects/incident-response
+
+[3] CISA, Incident Response Plan (IRP) Basics, 2024. https://www.cisa.gov/sites/default/files/2024-02/Incident-Response-Plan-Basics_508c_1Feb2024.pdf
+
+[4] NIST, Cybersecurity Framework 2.0 Resource & Overview Guide. https://www.nist.gov/cyberframework
+
+Appendix A – 200+ Word Report Description for Submission
+
+This report presents a practical Incident Response Plan developed as part of my Week 2 cybersecurity internship task. The objective of this work is to understand how an organization should prepare for, detect, analyze, contain, eradicate and recover from a cybersecurity incident. The plan is based on established incident response practices and references the current NIST SP 800-61 Revision 3 guidance and NIST Cybersecurity Framework 2.0. The report begins with incident response preparation, including defining roles and responsibilities, maintaining contact lists, preparing backups, monitoring systems, training employees and conducting response exercises. It then explains the process for reporting and validating security events, assigning severity levels, investigating affected systems, preserving evidence and determining the likely attack path. Detailed containment procedures are provided to limit attacker activity, followed by eradication steps such as removing malware, resetting compromised credentials, patching vulnerabilities and closing the original attack path. The recovery section explains how organizations can safely restore systems, validate backups, monitor restored services and return to normal operations. The plan also includes communication responsibilities, scenario-specific procedures for ransomware, phishing, malware, data breaches and DDoS attacks, as well as escalation criteria and a practical response checklist. Finally, the report emphasizes post-incident reviews, metrics, exercises and continuous improvement. This task helped strengthen my understanding of structured incident handling and the importance of having a clear, tested and practical response process before a cyber attack occurs.
+
+Appendix B – Submission Checklist
+
+Submit the report as a Word document (.docx).
+
+Use the 200+ word description from Appendix A in the internship submission form.
+
+For the technical internship, include the GitHub URL if required by the internship portal.
+
+Review the document for formatting and name before uploading.
+
+Keep the references included in the final report.
